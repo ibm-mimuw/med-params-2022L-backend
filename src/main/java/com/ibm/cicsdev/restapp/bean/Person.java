@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "person")
 public class Person {
     
-    @XmlElement(name = "name")
+	@XmlElement(name = "id")
+    private int id;
+	
+	@XmlElement(name = "name")
     private String name;
     
     @XmlElement(name = "sex")
@@ -27,6 +30,14 @@ public class Person {
     @XmlElement(name = "status")
     private float status;
     
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
    	public String getName() {
 		return name;
 	}

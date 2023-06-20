@@ -57,6 +57,7 @@ public class PersonResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void createPerson(Person person) {
+    	person.setId(people.size());
     	people.add(person);
     }
     
@@ -71,6 +72,11 @@ public class PersonResource {
     @Path("/all")
     @Consumes(MediaType.APPLICATION_JSON)
     public void createPeople(List<Person> people) {
+    	int i = 0;
+    	for (Person person : people) {
+    		person.setId(i);
+    		i++;
+    	}
     	PersonResource.people = people;
     }
     
